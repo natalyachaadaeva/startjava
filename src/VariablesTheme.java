@@ -19,8 +19,8 @@ public class VariablesTheme {
         double frequencyCpu = 2.6d;
         System.out.println("Частота процессора = " + frequencyCpu + " ГГц");
         int psuPower = 400;
-        boolean isPsuPowerMoreThen200 = psuPower > 200;
-        System.out.println("Мощность блока питания больше 200 Вт? = " + isPsuPowerMoreThen200);
+        boolean isPsuAbove200w = psuPower > 200;
+        System.out.println("Мощность блока питания больше 200 Вт? = " + isPsuAbove200w);
 
         // 2. Расчет стоимости товара со скидкой
         System.out.println("\n2. Расчет стоимости товара со скидкой");
@@ -28,10 +28,10 @@ public class VariablesTheme {
         float costBook = 235.83f;
         float basePrice = costPen + costBook;
         double discounSum = basePrice * 0.11;
-        double totalSum = basePrice - discounSum;
+        double discounPrice = basePrice - discounSum;
         System.out.println("Стоимость товаров без скидки = " + basePrice);
         System.out.println("Сумма скидки = " + discounSum);
-        System.out.println("Стоимость товаров со скидкой = " + totalSum);
+        System.out.println("Стоимость товаров со скидкой = " + discounPrice);
 
         // 3. Вывод слова JAVA
         System.out.println("\n3. Вывод слова JAVA");
@@ -45,35 +45,28 @@ public class VariablesTheme {
 
         int extremesIntValue = 2147483647;
         System.out.println("\nПервоначальное значение переменной Int = " + extremesIntValue);
-        extremesIntValue++;
-        System.out.println("Значение после инкремента на единицу = " + extremesIntValue);
-        extremesIntValue--;
-        extremesIntValue--;
-        System.out.println("Значение после декремента на единицу = " + extremesIntValue);
+        System.out.println("Значение после инкремента на единицу = " + ++extremesIntValue);
+        System.out.println("Значение после декремента на единицу = " + --extremesIntValue);
 
         byte extremesByteValue = 127;
         System.out.println("\nПервоначальное значение переменной Byte = " + extremesByteValue);
-        extremesByteValue++;
-        System.out.println("Значение после инкремента на единицу = " + extremesByteValue);
-        extremesByteValue--;
-        extremesByteValue--;
-        System.out.println("Значение после декремента на единицу= " + extremesByteValue);
+        System.out.println("Значение после инкремента на единицу = " + ++extremesByteValue);
+        System.out.println("Значение после декремента на единицу= " + --extremesByteValue);
 
         short extremesShortValue = 32767;
         System.out.println("\nПервоначальное значение переменной Short = " + extremesShortValue);
-        extremesShortValue++;
-        System.out.println("Значение после инкремента на единицу = " + extremesShortValue);
-        extremesShortValue--;
-        extremesShortValue--;
-        System.out.println("Значение после декремента на единицу= " + extremesShortValue);
+        System.out.println("Значение после инкремента на единицу = " + ++extremesShortValue);
+        System.out.println("Значение после декремента на единицу= " + --extremesShortValue);
 
         long extremesLongValue = 9223372036854775807L;
         System.out.println("\nПервоначальное значение переменной Long = " + extremesLongValue);
-        extremesLongValue++;
-        System.out.println("Значение после инкремента на единицу = " + extremesLongValue);
-        extremesLongValue--;
-        extremesLongValue--;
-        System.out.println("Значение после декремента на единицу= " + extremesLongValue);
+        System.out.println("Значение после инкремента на единицу = " + ++extremesLongValue);
+        System.out.println("Значение после декремента на единицу= " + --extremesLongValue);
+
+        char extremesCharValue = 65535;
+        System.out.println("\nПервоначальное значение переменной Char = " + extremesCharValue);
+        System.out.println("Значение после инкремента на единицу = " + ++extremesCharValue);
+        System.out.println("Значение после декремента на единицу= " + --extremesCharValue);
 
         // 5. Перестановка значений переменных
         System.out.println("\n5. Перестановка значений переменных");
@@ -93,21 +86,21 @@ public class VariablesTheme {
         System.out.println("\nс помощью арифметических операций \na = " + a + "\nb = " + b);
         // с помощью побитовой операции 
         a ^= b;
-        b = a ^ b;
+        b ^= a;
         a ^= b; 
         System.out.println("\nс помощью побитовой операции \na = " + a + "\nb = " + b);
 
         // 6. Вывод символов и их кодов
         System.out.println("\n6. Вывод символов и их кодов");
         char dollar = '$';
-        System.out.println((int) dollar + " = " + dollar);
         char asterisk = '*';
-        System.out.println((int) asterisk + " = " + asterisk);
         char atSign = '@';
-        System.out.println((int) atSign + " = " + atSign);
         char verticalBar = '|';
-        System.out.println((int) verticalBar + " = " + verticalBar);
         char tilde = '~';
+        System.out.println((int) dollar + " = " + dollar);
+        System.out.println((int) asterisk + " = " + asterisk);
+        System.out.println((int) atSign + " = " + atSign);
+        System.out.println((int) verticalBar + " = " + verticalBar);
         System.out.println((int) tilde + " = " + tilde);
 
         // 7. Вывод в консоль ASCII-арт Дюка
@@ -119,11 +112,11 @@ public class VariablesTheme {
         char rightParenthesis = ')';
         System.out.println("    " + slash + backslash);
         System.out.println("   " + slash + "  " + backslash);
-        System.out.println("  " + slash + underscore + leftParenthesis + " " + rightParenthesis + 
-                           backslash);
+        System.out.println("  " + slash + underscore + leftParenthesis + 
+                " " + rightParenthesis + backslash);
         System.out.println(" " + slash + "      " + backslash);
-        System.out.println("" + slash + underscore + underscore + underscore + underscore + slash +
-                           backslash + underscore + underscore + backslash);
+        System.out.println("" + slash + underscore + underscore + underscore + underscore + 
+                slash + backslash + underscore + underscore + backslash);
 
         // 8. Манипуляции с сотнями, десятками и единицами числа
         System.out.println("\n8. Манипуляции с сотнями, десятками и единицами числа");
@@ -151,14 +144,14 @@ public class VariablesTheme {
         System.out.println("\n\n10. Расчет стоимости товара со скидкой");
         BigDecimal costBook2 = new BigDecimal("235.83");
         BigDecimal costPen2 = new BigDecimal("105.5");
-        BigDecimal discoun = new BigDecimal("0.11");
+        BigDecimal discount = new BigDecimal("0.11");
         BigDecimal basePrice2 = costPen2.add(costBook2);
-        BigDecimal discounSum2 = basePrice2.multiply(discoun);
-        BigDecimal totalSum2 = basePrice2.subtract(discounSum2);
-        BigDecimal decimalDiscounSum2 = discounSum2.setScale(2, BigDecimal.ROUND_HALF_DOWN);
-        BigDecimal decimalTotalSum2 = totalSum2.setScale(2, BigDecimal.ROUND_HALF_DOWN);
+        BigDecimal discounSum2 = basePrice2.multiply(discount)
+                .setScale(2, BigDecimal.ROUND_HALF_DOWN);
+        BigDecimal discounPrice2 = basePrice2.subtract(discounSum2)
+                .setScale(2, BigDecimal.ROUND_HALF_DOWN);
         System.out.println("Стоимость товаров без скидки = " + basePrice2);
-        System.out.println("Сумма скидки = " + decimalDiscounSum2);
-        System.out.println("Стоимость товаров со скидкой = " + decimalTotalSum2);
+        System.out.println("Сумма скидки = " + discounSum2);
+        System.out.println("Стоимость товаров со скидкой = " + discounPrice2);
     }
 }

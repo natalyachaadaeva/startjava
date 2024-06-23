@@ -118,48 +118,48 @@ public class VariableNamesTheme {
         
         // Сотни равны?
         int hundreds = 100;
-        boolean hasHundredsEqual = hundreds == 100;
-        System.out.println("Сотни равны? = " + hasHundredsEqual);
+        boolean isEqualHundreds = hundreds == 100;
+        System.out.println("Сотни равны? = " + isEqualHundreds);
         
         // Компьютер включен?
         String computerTurnOn = "да";
-        boolean isComputerTurn = computerTurnOn != "да";        
-        System.out.println("Компьютер включен? = " + isComputerTurn);
+        boolean isComputerTurnOn = computerTurnOn != "да";        
+        System.out.println("Компьютер включен? = " + isComputerTurnOn);
         
         // Есть равные цифры?
         int number1 = 1;
-        boolean hasNumbersEqual = number1 == 1;
-        System.out.println("Есть равные цифры? = " + hasNumbersEqual);
+        boolean isEqualNumbers = number1 == 1;
+        System.out.println("Есть равные цифры? = " + isEqualNumbers);
         
         // Создано?
-        String created = "да";
-        boolean isCreated = created == "да";
-        System.out.println("Создано? = " + isCreated);
+        String itIsCreate = "да";
+        boolean isItCreated = itIsCreate == "да";
+        System.out.println("Создано? = " + isItCreated);
         
         // Пустое?
-        String empty = "да";
-        boolean isEmpty = empty != "да";
-        System.out.println("Пустое? = " + isEmpty);
+        String itIsEmpty = "да";
+        boolean empty = itIsEmpty != "да";
+        System.out.println("Пустое? = " + empty);
         
         // Активное?
-        String active = "Active";
-        boolean isActive = active != "Active";
-        System.out.println("Активное? = " + isActive);
+        String itIsActive = "Active";
+        boolean active = itIsActive != "Active";
+        System.out.println("Активное? = " + active);
         
         // Новое?
-        String new1 = "New";
-        boolean isNew = new1 == "New";
-        System.out.println("Новое? = " + isNew);
+        String itIsNew = "New";
+        boolean isItNew = itIsNew == "New";
+        System.out.println("Новое? = " + isItNew);
         
         // Электронная почта действительная?
-        String email = "действительная";
-        boolean isEmailValid = email == "действительная";
-        System.out.println("Электронная почта действительная? = " + isEmailValid);
+        String validEmail = "действительная";
+        boolean isValidEmail = validEmail == "действительная";
+        System.out.println("Электронная почта действительная? = " + isValidEmail);
         
         // Имеются уникальные строки?
-        int uniqStrings = 54;
-        boolean hasStringsUniq = uniqStrings == 54;
-        System.out.println("Имеются уникальные строки? = " + hasStringsUniq);
+        int uniqueStrings = 54;
+        boolean isUniqueStrings = uniqueStrings == 54;
+        System.out.println("Имеются уникальные строки? = " + isUniqueStrings);
 
         // 3. Аббревиатуры 
         System.out.println("\n3. Аббревиатуры");
