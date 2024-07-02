@@ -118,8 +118,8 @@ public class VariableNamesTheme {
         
         // Сотни равны?
         int hundreds = 100;
-        boolean isEqualHundreds = hundreds == 100;
-        System.out.println("Сотни равны? = " + isEqualHundreds);
+        boolean hasEqualHundreds = hundreds == 100;
+        System.out.println("Сотни равны? = " + hasEqualHundreds);
         
         // Компьютер включен?
         String computerTurnOn = "да";
@@ -132,24 +132,24 @@ public class VariableNamesTheme {
         System.out.println("Есть равные цифры? = " + isEqualNumbers);
         
         // Создано?
-        String itIsCreate = "да";
-        boolean isItCreated = itIsCreate == "да";
-        System.out.println("Создано? = " + isItCreated);
+        String isCreate = "да";
+        boolean isCreated = isCreate == "да";
+        System.out.println("Создано? = " + isCreated);
         
         // Пустое?
-        String itIsEmpty = "да";
-        boolean empty = itIsEmpty != "да";
+        String isEmpty = "да";
+        boolean empty = isEmpty != "да";
         System.out.println("Пустое? = " + empty);
         
         // Активное?
-        String itIsActive = "Active";
-        boolean active = itIsActive != "Active";
+        String isActive = "Active";
+        boolean active = isActive != "Active";
         System.out.println("Активное? = " + active);
         
         // Новое?
-        String itIsNew = "New";
-        boolean isItNew = itIsNew == "New";
-        System.out.println("Новое? = " + isItNew);
+        String itNew = "New";
+        boolean isNew = itNew == "New";
+        System.out.println("Новое? = " + isNew);
         
         // Электронная почта действительная?
         String validEmail = "действительная";
