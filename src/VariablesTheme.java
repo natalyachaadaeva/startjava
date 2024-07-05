@@ -63,7 +63,7 @@ public class VariablesTheme {
         System.out.println("Значение после инкремента на единицу = " + ++extremesLongValue);
         System.out.println("Значение после декремента на единицу= " + --extremesLongValue);
 
-        char extremesCharValue = (char) - 1;
+        char extremesCharValue = 65535;
         System.out.println("\nПервоначальное значение переменной Char = " + (int) extremesCharValue);
         System.out.println("Значение после инкремента на единицу = " + (int) ++extremesCharValue);
         System.out.println("Значение после декремента на единицу= " + (int) --extremesCharValue);
