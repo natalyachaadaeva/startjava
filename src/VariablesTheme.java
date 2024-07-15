@@ -1,4 +1,6 @@
 import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Scanner;
 
 public class VariablesTheme {
     public static void main(String[] args) {
@@ -147,9 +149,9 @@ public class VariablesTheme {
         BigDecimal discount = new BigDecimal("0.11");
         BigDecimal basePrice2 = costPen2.add(costBook2);
         BigDecimal discounSum2 = basePrice2.multiply(discount)
-                .setScale(2, BigDecimal.ROUND_HALF_DOWN);
+                .setScale(2, RoundingMode.HALF_DOWN);
         BigDecimal discounPrice2 = basePrice2.subtract(discounSum2)
-                .setScale(2, BigDecimal.ROUND_HALF_DOWN);
+                .setScale(2, RoundingMode.HALF_DOWN);
         System.out.println("Стоимость товаров без скидки = " + basePrice2);
         System.out.println("Сумма скидки = " + discounSum2);
         System.out.println("Стоимость товаров со скидкой = " + discounPrice2);
