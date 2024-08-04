@@ -75,14 +75,14 @@ public class IfElseStatementTheme {
         int number2 = 723;
         int ones1 = number1 % 10;
         int tens1 = number1 / 10 % 10;
-        int hundred1 = number1 / 100;
+        int hundreds1 = number1 / 100;
         int ones2 = number2 % 10;
         int tens2 = number2 / 10 % 10;
-        int hundred2 = number2 / 100;
+        int hundreds2 = number2 / 100;
         if (number1 == number2) {
             System.out.println("Числа равны, разряды одинаковы");
         } else {
-            if (ones1 != ones2 && tens1 != tens2 && hundred1 != hundred2) {
+            if (ones1 != ones2 && tens1 != tens2 && hundreds1 != hundreds2) {
                 System.out.println("Нет совпадающих цифр, разряды разные");
             } else {
                 System.out.println("Исходные = " + number1 + " и " + number2);
@@ -93,8 +93,8 @@ public class IfElseStatementTheme {
                 if (tens1 == tens2) {
                     System.out.println(tens1 + " и " + tens2 + " - Номер разряда 2");
                 }
-                if (hundred1 == hundred2) {
-                    System.out.println(hundred1 + " и " + hundred2 + " - Номер разряда 3");
+                if (hundreds1 == hundreds2) {
+                    System.out.println(hundreds1 + " и " + hundreds2 + " - Номер разряда 3");
                 }
             }
         }
@@ -119,15 +119,17 @@ public class IfElseStatementTheme {
         // 6. Подсчет начисленных банком %
         System.out.println("\n\n6. Подсчет начисленных банком %");
         double deposit = 321123.59;
-        double rate = deposit * 0.5;
+        double amountRate = deposit * 0.5;
         System.out.println("Cумма вклада " + deposit);
-        if ((deposit > 100000) && (deposit < 300000)) {
-            rate = deposit * 0.07;
+        if (deposit < 100000) {
+            amountRate = amountRate;
+        } else if ((deposit > 100000) && (deposit < 300000)) {
+            amountRate = deposit * 0.07;
         } else {
-            rate = deposit * 0.1;
+            amountRate = deposit * 0.1;
         }
-        System.out.println("Сумма начисленного процента " + rate);
-        System.out.println("итоговую сумму с % " + (deposit + rate));
+        System.out.println("Сумма начисленного процента " + amountRate);
+        System.out.println("итоговую сумму с % " + (deposit + amountRate));
 
         // 7. Определение оценки по предметам
         System.out.println("\n7. Определение оценки по предметам");
@@ -185,15 +187,17 @@ public class IfElseStatementTheme {
         // 10. Подсчет начисленных банком %
         System.out.println("\n10. Подсчет начисленных банком %");
         double deposit2 = 321123.59;
-        double rate2 = 0.5;
+        double amountRate2 = 0.5;
         System.out.println("Cумма вклада " + deposit2);
-        if ((deposit2 > 100000) && (deposit2 < 300000)) {
-            rate2 = deposit2 * 0.07;
+        if (deposit2 < 100000) {
+            amountRate2 = amountRate2;
+        } else if ((deposit2 > 100000) && (deposit2 < 300000)) {
+            amountRate2 = deposit2 * 0.07;
         } else {
-            rate2 = deposit2 * 0.1;
+            amountRate2 = deposit2 * 0.1;
         }
-        double totalSum = deposit2 + rate2;
-        BigDecimal percentBigDecimal = new BigDecimal(rate2).setScale(2, RoundingMode.HALF_DOWN);
+        double totalSum = deposit2 + amountRate2;
+        BigDecimal percentBigDecimal = new BigDecimal(amountRate2).setScale(2, RoundingMode.HALF_DOWN);
         BigDecimal totalSumBigDecimal = new BigDecimal(totalSum).setScale(2, RoundingMode.HALF_DOWN);
         System.out.println("Сумма начисленного процента " + percentBigDecimal);
         System.out.println("Итоговая сумма с % " + totalSumBigDecimal);
