@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class IfElseStatementTheme {
     public static void main(String[] args) {
-        // 1. Перевод псевдокода на язык Java
         System.out.println("\n1. Перевод псевдокода на язык Java");
         String gender = "male";
         if (gender != "male") {
@@ -37,7 +36,6 @@ public class IfElseStatementTheme {
             System.out.print("\nДобрый день!");
         }
 
-        // 2. Поиск большего числа
         System.out.println("\n\n2. Поиск большего числа");
         int a = 4;
         int b = 3;
@@ -50,7 +48,6 @@ public class IfElseStatementTheme {
             System.out.print("\nДанные числа равны");
         }
 
-        // 3. Проверка числа
         System.out.println("\n\n3. Проверка числа");
         int number = 5;
         System.out.print(number + " является ");
@@ -69,7 +66,6 @@ public class IfElseStatementTheme {
             System.out.print("нулевым значением");
         }
 
-        // 4. Поиск одинаковых цифр в числах
         System.out.println("\n\n4. Поиск одинаковых цифр в числах");
         int number1 = 123;
         int number2 = 723;
@@ -99,39 +95,37 @@ public class IfElseStatementTheme {
             }
         }
 
-        // 5. Определение символа по его коду
         System.out.println("\n5. Определение символа по его коду");
         char element = '\u005E';
         System.out.print("'" + element + "'");
         if (Character.isDigit(element)) {
             System.out.print(" - Это цифра");
-        }
-        if (Character.isUpperCase(element)) {
-            System.out.print(" - Это заглавная буква");
-        }
-        if (Character.isLowerCase(element)) {
-            System.out.print(" - Это маленькая буква");
-        }
-        if (!Character.isLetterOrDigit(element)) {
-            System.out.print(" - Ни буква и ни цифра");
+        } else {
+            if (Character.isUpperCase(element)) {
+                System.out.print(" - Это заглавная буква");
+            } else {
+                if (Character.isLowerCase(element)) {
+                    System.out.print(" - Это маленькая буква");
+                } else { 
+                    System.out.print(" - Ни буква и ни цифра");
+                }
+            }
         }
 
-        // 6. Подсчет начисленных банком %
         System.out.println("\n\n6. Подсчет начисленных банком %");
         double deposit = 321123.59;
         double amountRate = deposit * 0.5;
         System.out.println("Cумма вклада " + deposit);
-        if (deposit < 100000) {
-            amountRate = amountRate;
-        } else if ((deposit > 100000) && (deposit < 300000)) {
+        if ((deposit > 100000) && (deposit < 300000)) {
             amountRate = deposit * 0.07;
-        } else {
-            amountRate = deposit * 0.1;
+        } else { 
+            if (deposit > 300000) {
+                amountRate = deposit * 0.1;
+            }
         }
+        System.out.println("Итоговую сумму с % " + (deposit + amountRate));
         System.out.println("Сумма начисленного процента " + amountRate);
-        System.out.println("итоговую сумму с % " + (deposit + amountRate));
 
-        // 7. Определение оценки по предметам
         System.out.println("\n7. Определение оценки по предметам");
         double historyPercent = 59;
         double historyScore = 2;
@@ -158,7 +152,6 @@ public class IfElseStatementTheme {
         System.out.println("Cредний балл оценок по предметам " +
                 ((historyScore + programmingScore) / 2));
 
-        // 8. Расчет годовой прибыли
         System.out.println("\n8. Расчет годовой прибыли");
         float productPrice = 13025.233f;
         float rental = 5123.018f;
@@ -170,7 +163,6 @@ public class IfElseStatementTheme {
             System.out.println("Прибыль за год: " + yearProfit);
         }
 
-        // 9. Расчет годовой прибыли
         System.out.println("\n9. Расчет годовой прибыли");
         BigDecimal productPrice1 = new BigDecimal("13025.233");
         BigDecimal rental1 = new BigDecimal("5123.018");
@@ -184,17 +176,16 @@ public class IfElseStatementTheme {
             System.out.println("Прибыль за год: " + yearProfit2);
         }
 
-        // 10. Подсчет начисленных банком %
         System.out.println("\n10. Подсчет начисленных банком %");
         double deposit2 = 321123.59;
         double amountRate2 = 0.5;
         System.out.println("Cумма вклада " + deposit2);
-        if (deposit2 < 100000) {
-            amountRate2 = amountRate2;
-        } else if ((deposit2 > 100000) && (deposit2 < 300000)) {
+        if ((deposit2 > 100000) && (deposit2 < 300000)) {
             amountRate2 = deposit2 * 0.07;
         } else {
-            amountRate2 = deposit2 * 0.1;
+            if (deposit2 > 300000) {
+                amountRate2 = deposit2 * 0.1;
+            }
         }
         double totalSum = deposit2 + amountRate2;
         BigDecimal percentBigDecimal = new BigDecimal(amountRate2).setScale(2, RoundingMode.HALF_DOWN);
