@@ -100,16 +100,12 @@ public class IfElseStatementTheme {
         System.out.print("'" + element + "'");
         if (Character.isDigit(element)) {
             System.out.print(" - Это цифра");
-        } else {
-            if (Character.isUpperCase(element)) {
-                System.out.print(" - Это заглавная буква");
-            } else {
-                if (Character.isLowerCase(element)) {
-                    System.out.print(" - Это маленькая буква");
-                } else { 
-                    System.out.print(" - Ни буква и ни цифра");
-                }
-            }
+        } else if (Character.isUpperCase(element)) {
+            System.out.print(" - Это заглавная буква");
+        } else if (Character.isLowerCase(element)) {
+            System.out.print(" - Это маленькая буква");
+        } else { 
+            System.out.print(" - Ни буква и ни цифра");
         }
 
         System.out.println("\n\n6. Подсчет начисленных банком %");
@@ -118,10 +114,8 @@ public class IfElseStatementTheme {
         System.out.println("Cумма вклада " + deposit);
         if ((deposit > 100000) && (deposit < 300000)) {
             amountRate = deposit * 0.07;
-        } else { 
-            if (deposit > 300000) {
-                amountRate = deposit * 0.1;
-            }
+        } else if (deposit > 300000) {
+            amountRate = deposit * 0.1;
         }
         System.out.println("Итоговую сумму с % " + (deposit + amountRate));
         System.out.println("Сумма начисленного процента " + amountRate);
@@ -182,10 +176,8 @@ public class IfElseStatementTheme {
         System.out.println("Cумма вклада " + deposit2);
         if ((deposit2 > 100000) && (deposit2 < 300000)) {
             amountRate2 = deposit2 * 0.07;
-        } else {
-            if (deposit2 > 300000) {
-                amountRate2 = deposit2 * 0.1;
-            }
+        } else if (deposit2 > 300000) {
+            amountRate2 = deposit2 * 0.1;
         }
         double totalSum = deposit2 + amountRate2;
         BigDecimal percentBigDecimal = new BigDecimal(amountRate2).setScale(2, RoundingMode.HALF_DOWN);
