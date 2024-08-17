@@ -12,14 +12,12 @@ public class CyclesTheme {
         do {
             if (startRange % 2 == 0) {
                 sumEvens += startRange; 
-            }
-            if (startRange % 2 != 0) {
+            } else if (startRange % 2 != 0) {
                 sumOdds += startRange;
             }
             startRange++;
         } while (startRange < endRange);
-        System.out.print(" сумма четных чисел = " +
-                sumEvens + ", а нечетных = " + sumOdds);
+        System.out.print(" сумма четных чисел = " + sumEvens + ", а нечетных = " + sumOdds);
 
         System.out.println("\n\n2. Вывод чисел между min и max в порядке убывания");
         int a = 10;
@@ -29,31 +27,27 @@ public class CyclesTheme {
         int max = 0;
         if (a > b && a > c) {
             max = a; 
-        } else if (b > c) { 
+        } else if (b > c) {
             max = b;
         } else {
             max = c;
-        }
-        if (a < b && a < c) {
             min = a; 
-        } else if (b < c) { 
             min = b;
-        } else {
             min = c; 
         }
-        
-        for (int i = min; i <= max; i++) {
-            if (a < max && a >= min) i++;
+        for (int i = max - 1; i >= min; i--) {
             System.out.print(" " + i); 
         }
 
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
         int srcNumber = 1234;
         int sum = 0;
+        int reverse = 0;
         System.out.print("Поразрядно исходное число в обратном порядке: ");
         while (srcNumber > 0) {
-            sum += srcNumber % 10;
-            System.out.print("" + srcNumber % 10);
+            reverse = srcNumber % 10;
+            System.out.print(reverse);
+            sum += reverse;
             srcNumber /= 10;
         }
         System.out.println("\nСумма выделенных цифр: " + sum);
@@ -70,10 +64,9 @@ public class CyclesTheme {
         System.out.println("\n5. Проверка количества двоек числа на четность/нечетность");
         srcNumber = 3242592;
         int srcNumberCopy = srcNumber;
-        int evenOrOdd = 0;
         int countsOfTwos = 0;
         while (srcNumber > 0) {
-            if (srcNumber != 2) {
+            if (srcNumber % 10 == 2) {
                 countsOfTwos++; 
             }
             srcNumber /= 10; 
@@ -93,35 +86,34 @@ public class CyclesTheme {
             System.out.println();
         }
         System.out.println();
-        // треугольник  
-        int rows = 5;            
-        for (int i = 0; i <= rows - 1; i++) {
-            for (int j = 0; j < i; j++) {
-                System.out.print("");
-            }
-            for (int k = i; k <= rows - 1; k++) { 
+
+        // треугольник
+        int triangleHeight = 5;
+        while (triangleHeight >= 1) {
+            int triangleWidth = 1; 
+            while (triangleWidth <= triangleHeight) {
                 System.out.print("#");
-            } 
-            System.out.println();
-        }
-        // стрелка
-        int n = 2;
-        for (int i = 0; i <= n; i++) {
-            for (int j = i; j > 0; j--) {
-                System.out.print("$");
+                triangleWidth++;
             }
             System.out.println();
+            triangleHeight--;
         }
-        int rows2 = 3;            
-        for (int i = 0; i <= rows2 - 1; i++) {
-            for (int j = 0; j < i; j++) {
-                System.out.print("");
-            }
-            for (int k = i; k <= rows2 - 1; k++) { 
+        System.out.println();
+
+        // равнобедренный треугольник
+        int rows = 3;
+        int width = 1;
+        int reversWidth = 1;
+        int n = 1;
+        do {
+            int j = 0;
+            do {
                 System.out.print("$");
-            } 
+            } while (++j < width);
             System.out.println();
-        }
+            if (n == rows) reversWidth = -1;
+            width += reversWidth;
+        } while (++n <= (2 * rows - 1));
 
         System.out.println("\n7. Вывод ASCII-символов");
         System.out.print("DECIMAL  CHARACTER  DESCRIPTION\n");
