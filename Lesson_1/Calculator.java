@@ -5,38 +5,35 @@ public class Calculator {
         int b = 10;
         char operation = '^';
         int result = 0;
-
         if (operation == '+') {
             result = a + b;
-            System.out.println(a + " + " + b + " = " + result);
         } else if (operation == '-') {
-            result = a - b;
-            System.out.println(a + " - " + b + " = " + result);
+                result = a - b;
         } else if (operation == '*') {
             result = a * b;
-            System.out.println(a + " * " + b + " = " + result);
         } else if (operation == '/') {
-            if (b != 0) {
-                result = a / b;
-                System.out.println(a + " / " + b + " = " + result);
-            } else {
-                System.out.println("На ноль делить нельзя");
-            }
-        } else if (operation == '^') {
-            result = 1;
-            for (int i = 0; i < b; i++) {
-                result *= a;
-            }
-            System.out.println(a + " ^ " + b + " = " + result);
-        } else if (operation == '%') {
-            if (b != 0) {
-                result = a % b;
-                System.out.println(a + " % " + b + " = " + result);
-            } else {
-                System.out.println("На ноль делить нельзя");
-            }
+        if (b != 0) {
+        result = a / b;
         } else {
-            System.out.println("Неверное выражение");
+            System.out.println("Деление на ноль не поддерживается");
         }
+        } else if (operation == '^') {
+        result = 1;
+        for (int i = 0; i < b; i++) {
+        result *= a;
+        }
+        } else if (operation == '%') {
+        if (b != 0) {
+        result = a % b;
+        } else {
+        System.out.println("Деление на ноль не поддерживается");
+        }
+        } else  {
+        System.out.println("Знак "  + operation +  " не поддерживается");
+        }
+        if (operation == '*' || operation == '/' || operation == '-' || operation == '+' 
+            || operation == '%' || operation == '^') {
+        System.out.println(a + " " + operation + " " + b + " = " + result); 
+        } 
     }
 }
