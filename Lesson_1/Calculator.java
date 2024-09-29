@@ -8,32 +8,32 @@ public class Calculator {
         if (operation == '+') {
             result = a + b;
         } else if (operation == '-') {
-                result = a - b;
+            result = a - b;
         } else if (operation == '*') {
             result = a * b;
         } else if (operation == '/') {
-        if (b != 0) {
-        result = a / b;
-        } else {
-            System.out.println("Деление на ноль не поддерживается");
-        }
+            if (b != 0) {
+                result = a / b;
+            } else {
+                System.out.println("Деление на ноль не поддерживается");
+            }
         } else if (operation == '^') {
-        result = 1;
-        for (int i = 0; i < b; i++) {
-        result *= a;
-        }
+            result = 1;
+            for (int i = 0; i < b; i++) {
+                result *= a;
+            }
         } else if (operation == '%') {
-        if (b != 0) {
-        result = a % b;
+            if (b != 0) {
+                result = a % b;
+            } else {
+                System.out.println("Деление на ноль не поддерживается");
+            }
         } else {
-        System.out.println("Деление на ноль не поддерживается");
+            System.out.println("Знак " + operation + " не поддерживается");
         }
-        } else  {
-        System.out.println("Знак "  + operation +  " не поддерживается");
-        }
-        if (operation == '*' || operation == '/' || operation == '-' || operation == '+' 
-            || operation == '%' || operation == '^') {
-        System.out.println(a + " " + operation + " " + b + " = " + result); 
+        if (operation == '*' || operation == '/' || operation == '-' || operation == '+' || 
+                operation == '%' || operation == '^') {
+            System.out.println(a + " " + operation + " " + b + " = " + result); 
         } 
     }
 }
