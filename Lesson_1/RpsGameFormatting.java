@@ -47,10 +47,12 @@ public class RpsGameFormatting {
             Thread.sleep(100);
         }
         System.out.println(sign2);
+
         if (sign1.equals(sign2)) {
             System.out.println("Победила дружба!");
             return;
         }
+
         boolean isEqualName1 = sign1.equals(rock) && sign2.equals(scissors) ||
                 sign1.equals(scissors) && sign2.equals(paper) ||
                 sign1.equals(paper) && sign2.equals(rock);

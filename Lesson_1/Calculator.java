@@ -1,4 +1,3 @@
-
 public class Calculator {
     public static void main(String[] args) {
         int a = 2;
@@ -12,28 +11,26 @@ public class Calculator {
         } else if (operation == '*') {
             result = a * b;
         } else if (operation == '/') {
-            if (b != 0) {
-                result = a / b;
-            } else {
+            if (b == 0) {
                 System.out.println("Деление на ноль не поддерживается");
+                return;
             }
+            result = a / b;
         } else if (operation == '^') {
             result = 1;
             for (int i = 0; i < b; i++) {
                 result *= a;
             }
         } else if (operation == '%') {
-            if (b != 0) {
-                result = a % b;
-            } else {
+            if (b == 0) {
                 System.out.println("Деление на ноль не поддерживается");
+                return;
             }
+            result = a % b;
         } else {
             System.out.println("Знак " + operation + " не поддерживается");
+            return;
         }
-        if (operation == '*' || operation == '/' || operation == '-' || operation == '+' || 
-                operation == '%' || operation == '^') {
-            System.out.println(a + " " + operation + " " + b + " = " + result); 
-        } 
+        System.out.println(a + " " + operation + " " + b + " = " + result);
     }
 }
