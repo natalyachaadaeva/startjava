@@ -6,18 +6,18 @@ public class Person {
     int age = 34;
 
     void move() {
-        System out print("Идет");
+        System.out.print("Идет");
     }
 
     void run() {
-        System out print("Бежит");
+        System.out.print("Бежит");
     }
 
     String speak() {
-        System out print("Говорит");
+        System.out.print("Говорит");
     }
 
     void learnJava() {
-        System out print("Учит Java");
+        System.out.print("Учит Java");
     }
 }
