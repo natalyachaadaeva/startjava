@@ -1,11 +1,11 @@
 public class WolfTest {
     public static void main(String[] args) {        
         Wolf wolfOne = new Wolf();
-        wolfOne.height = 5.15f;
-        wolfOne.color = "серебристый";
-        wolfOne.age = 10;
-        System.out.println("Рост - " + wolfOne.height + " м " + "\nОкрас - " + wolfOne.color +
-                "\nВозраст - " + wolfOne.age + " месяцев");
+        wolfOne.setHeight(5f);
+        wolfOne.setColor("серебристый");
+        wolfOne.setAge(5);
+        System.out.println("Рост - " + wolfOne.getHeight() + " м " + "\nОкрас - " + wolfOne.getColor() +
+                "\nВозраст - " +  wolfOne.getAge() + " месяцев");
         wolfOne.howl();  
         System.out.println();
         wolfOne.run();
