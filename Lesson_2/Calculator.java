@@ -1,5 +1,9 @@
 class Calculator {
     public int calculate(int a, char operation, int b) {
+        if (operation == '/' && b == 0) {
+            System.out.println("Ошибка: деление на ноль запрещено");
+            return 0;
+        }
         switch (operation) {
             case '+':
                 return a + b;
@@ -8,12 +12,7 @@ class Calculator {
             case '*':
                 return a * b;
             case '/':
-                if (b != 0) {
-                    return a / b;
-                } else {
-                    System.out.println("Ошибка: деление на ноль запрещено");
-                    return 0;
-                }
+                return a / b;
             case '^':
                 int result = 1;
                 for (int i = 0; i < b; i++) {

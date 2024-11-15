@@ -5,7 +5,7 @@ public class CalculatorTest {
         String answer = "yes";
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
-        
+
         while (answer.equals("yes")) {
             System.out.print("Введите первое число: ");
             int a = scanner.nextInt();
@@ -20,8 +20,8 @@ public class CalculatorTest {
             System.out.println("Результат:" + result);
 
             System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-            answer = scanner.next();
-            while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
+            answer = scanner.next().toLowerCase();
+            while (!answer.equals("yes") && !answer.equals("no")) {
                 System.out.print("Пожалуйста, введите 'yes' или 'no': ");
                 answer = scanner.next();
             }
