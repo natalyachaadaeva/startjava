@@ -1,6 +1,6 @@
 class Calculator {
     public int calculate(int a, char operation, int b) {
-        if (operation == '/' && b == 0) {
+        if (operation == '/' || operation == '%' && b == 0) {
             System.out.println("Ошибка: деление на ноль запрещено");
             return 0;
         }
