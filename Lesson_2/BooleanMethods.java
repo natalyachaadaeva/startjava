@@ -1,23 +1,23 @@
-public class BooleanMethod {
-    public boolean isProgrammFinished() {
+public class BooleanMethods {
+    public boolean isProgrammRunning() {
         System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "() -> " +
                 "старт игрового процесса");
         return true;
     }
 
-    public boolean isFileOnSsdOrUsbToken() {
+    public boolean isFileDeleted() {
         System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "() -> " +
                 "удалить файл на жестком диске или флешке?");
         return true;
     }
 
-    public boolean isDigitUnique() {
+    public boolean hasUniqueDigit() {
         System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "() -> " +
                 "последовательность содержит уникальную цифру? ");
         return true;
     }
 
-    public boolean isEnterLetterOrOther() {
+    public boolean isLetter() {
         System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "() -> " +
                 "пользователь ввел букву?");
         return true;
@@ -35,19 +35,19 @@ public class BooleanMethod {
         return true;
     }
 
-    public boolean isEnterStringWrong() {
+    public boolean isEmpty() {
         System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "() -> " +
                 "пользователь ввёл пустую строку или из одних пробелов? ");
         return true;
     }
 
-    public boolean isNumberEven() {
+    public boolean isEvenNumber() {
         System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "() -> " +
                 "на кубике, который бросил компьютер, выпало четное число?");
         return true;
     }
 
-    public boolean isPathValid() {
+    public boolean isValidPath() {
         System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "() -> " +
                 "путь до файла, который вы ищите на ssd, действительный?");
         return true;
