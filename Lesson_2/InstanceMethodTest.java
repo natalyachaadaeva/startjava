@@ -1,5 +1,11 @@
 public class InstanceMethodTest {
-    public void execNoBooleanMethods() {
+    public static void main(String[] args) {
+        InstanceMethodTest mainClass = new InstanceMethodTest();
+        mainClass.execNonBooleanMethods();
+        mainClass.execBooleanMethods();
+    }
+
+    private void execNonBooleanMethods() {
         NonBooleanMethods nonBm = new NonBooleanMethods();
         nonBm.findLongestWord();
         nonBm.selectMenuItem();
@@ -18,7 +24,7 @@ public class InstanceMethodTest {
         System.out.println();
     }
 
-    public void execBooleanMethods() {
+    private void execBooleanMethods() {
         BooleanMethods bm = new BooleanMethods();
         System.out.println(bm.isProgrammRunning());
         System.out.println(bm.isFileDeleted());
@@ -29,11 +35,6 @@ public class InstanceMethodTest {
         System.out.println(bm.isEmpty());
         System.out.println(bm.isEvenNumber());
         System.out.println(bm.isValidPath());
-    }
-
-    public static void main(String[] args) {
-        InstanceMethodTest mainClass = new InstanceMethodTest();
-        mainClass.execNoBooleanMethods();
-        mainClass.execBooleanMethods();
+        System.out.println(bm.isFileExist());
     }
 }

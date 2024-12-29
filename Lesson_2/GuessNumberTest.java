@@ -26,8 +26,6 @@ public class GuessNumberTest {
                 continueGame = scanner.nextLine();
             }
         }
-
         System.out.println("Игра завершена.");
-        scanner.close();
     }
 }

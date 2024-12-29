@@ -13,20 +13,20 @@ class GuessNumber {
 
     public void play() {
         Player currentPlayer = player1;
-        while (true) {
-            System.out.println(currentPlayer.getName() + ", угадайте число от 1 до 100:");
-            currentPlayer.setNumber(new Scanner(System.in).nextInt());
+        Scanner scanner = new Scanner(System.in);
 
-            if (currentPlayer.getNumber() == targetNumber) {
-                System.out.println("Поздравляем, " + currentPlayer.getName() + ", вы угадали число!");
-                break;
-            } else if (targetNumber < currentPlayer.getNumber()) {
-                System.out.println("Число  меньше того, что загадал компьютер");
-                currentPlayer = (currentPlayer == player1) ? player2 : player1;
-            } else if (targetNumber > currentPlayer.getNumber()) {
+        while (currentPlayer.getNumber() != targetNumber) {
+            System.out.println(currentPlayer.getName() + ", угадайте число от 1 до 100:");
+            int guessedNumber = scanner.nextInt();
+            currentPlayer = (currentPlayer == player1) ? player2 : player1;
+            currentPlayer.setNumber(guessedNumber);
+
+            if (targetNumber < guessedNumber) {
+                System.out.println("Число меньше того, что загадал компьютер");
+            } else if (targetNumber > guessedNumber) {
                 System.out.println("Число больше того, что загадал компьютер");
-                currentPlayer = (currentPlayer == player1) ? player2 : player1;
             }
         }
+        System.out.println("Поздравляем, " + currentPlayer.getName() + ", вы угадали число!");
     }
 }
