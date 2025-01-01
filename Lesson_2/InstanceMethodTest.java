@@ -1,8 +1,8 @@
 public class InstanceMethodTest {
     public static void main(String[] args) {
-        InstanceMethodTest mainClass = new InstanceMethodTest();
-        mainClass.execNonBooleanMethods();
-        mainClass.execBooleanMethods();
+        InstanceMethodTest imt = new InstanceMethodTest();
+        imt.execNonBooleanMethods();
+        imt.execBooleanMethods();
     }
 
     private void execNonBooleanMethods() {

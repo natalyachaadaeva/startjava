@@ -18,8 +18,8 @@ class GuessNumber {
         while (currentPlayer.getNumber() != targetNumber) {
             System.out.println(currentPlayer.getName() + ", угадайте число от 1 до 100:");
             int guessedNumber = scanner.nextInt();
-            currentPlayer = (currentPlayer == player1) ? player2 : player1;
             currentPlayer.setNumber(guessedNumber);
+            currentPlayer = (currentPlayer == player1) ? player2 : player1;
 
             if (targetNumber < guessedNumber) {
                 System.out.println("Число меньше того, что загадал компьютер");
