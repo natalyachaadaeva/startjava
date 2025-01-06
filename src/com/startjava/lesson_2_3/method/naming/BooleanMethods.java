@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.method;
+
 public class BooleanMethods {
     public boolean isProgrammRunning() {
         System.out.print(MethodName.getCurrent() + "() -> старт игрового процесса ");

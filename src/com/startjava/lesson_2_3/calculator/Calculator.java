@@ -4,7 +4,6 @@ class Calculator {
             System.out.println("Ошибка: деление на ноль запрещено");
             return 0;
         }
-        int result = 0;
         switch (operation) {
             case '+':
                 return a + b;

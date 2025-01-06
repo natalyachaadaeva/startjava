@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.method;
+
 public class InstanceMethodTest {
     public static void main(String[] args) {
         InstanceMethodTest imt = new InstanceMethodTest();

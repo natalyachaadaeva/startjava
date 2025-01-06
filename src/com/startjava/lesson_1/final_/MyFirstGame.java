@@ -1,6 +1,8 @@
+package com.startjava.lesson_1.final_;
+
 import java.util.Scanner;
 
-public class GuessNumber {
+public class MyFirstGame {
     public static void main(String[] args) {
         // компьютер "загадывает" число от 1 до 100
         Scanner console = new Scanner(System.in);
