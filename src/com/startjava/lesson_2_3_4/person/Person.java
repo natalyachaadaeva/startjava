@@ -17,6 +17,7 @@ public class Person {
 
     String speak() {
         System.out.print("Говорит");
+        return "";
     }
 
     void learnJava() {

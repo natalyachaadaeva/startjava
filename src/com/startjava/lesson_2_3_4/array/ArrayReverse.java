@@ -16,22 +16,17 @@ public class ArrayReverse {
     }
 
     public static void main(String[] args) {
-        getArray(new int[0]);
-        getArray(null); // null приводит к ошибке, пробую через if
+        getArray(new int[0]); // массив нулевой длины
+        getArray(null); // null приводит к ошибке
         getArray(new int[]{6, 8, 9, 1}); // 6, 8, 9, 1
         getArray(new int[]{13, 8, 5, 3, 2, 1, 1}); // 13, 8, 5, 3, 2, 1, 1
 
-        int[] getArray2 = {1, 2, 3, 4};
-        System.out.println("До реверса: " + Arrays.toString(getArray2));
-        int left = 0;
-        int right = getArray2.length - 1;
-        while (left < right) {
-            int temp = getArray2[left];
-            getArray2[left] = getArray2[right];
-            getArray2[right] = temp;
-            left++;
-            right--;
+        int[] abc = {1, 2, 3, 4};
+        System.out.println("До реверса: " + Arrays.toString(abc));
+        System.out.print("После реверса: [");
+        for (int i = abc.length - 1; i > 0; i--) {
+            System.out.print(abc[i] + ", ");
         }
-        System.out.println("После реверса: " + Arrays.toString(getArray2));
+        System.out.print(abc[0] + "]");
     }
 }
