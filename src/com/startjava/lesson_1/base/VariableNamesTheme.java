@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class VariableNamesTheme {
     public static void main(String[] args) {
         // 1. Разные переменные 
-        System.out.println("1. Разные переменные");
+        System.out.println("1. Разные 'переменные");
         
         // Цифра
         int digit = 5;
