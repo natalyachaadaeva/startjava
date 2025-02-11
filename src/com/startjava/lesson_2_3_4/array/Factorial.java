@@ -1,6 +1,6 @@
 package com.startjava.lesson_2_3_4.array;
 
-public class ArrayFactorial {
+public class Factorial {
     public static void getFactorial(int... args) {
         for (int n : args) {
             System.out.print("Факториал " + n + ": ");

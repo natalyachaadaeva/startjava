@@ -3,7 +3,7 @@ package com.startjava.lesson_2_3_4.array;
 import java.util.Arrays;
 import java.util.Random;
 
-public class DeletingArrayElements {
+public class DeletingElements {
     public static void getArray(int[] array, int index) {
         System.out.println("Исходный массив: " + Arrays.toString(array));
 
