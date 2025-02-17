@@ -1,5 +1,5 @@
 package com.startjava.lesson_2_3_4.array;
-
+//
 public class Factorial {
     public static void getFactorial(int... args) {
         for (int n : args) {

@@ -51,7 +51,5 @@ public class Reverse {
         getArray(new int[]{13, 8, 5, 3, 2, 1, 1}); // 13, 8, 5, 3, 2, 1, 1
         reverseArray(new int[]{13, 8, 5, 3, 2, 1, 1}); // 13, 8, 5, 3, 2, 1, 1
         System.out.println();
-
-
     }
 }
