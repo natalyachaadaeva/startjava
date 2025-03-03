@@ -1,55 +1,46 @@
 package com.startjava.lesson_2_3_4.array;
 
-import java.util.Arrays;
-
 public class Reverse {
-    public static long[] getArray(int[] arr) {
+    public static void reverseAndPrint(int[] arr) {
         if (arr == null) {
             System.out.println("   Array is null");
-            return null;
+            return;
         }
-        System.out.printf("%6s", "   До реверса: [");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]);
-            if (i < arr.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        System.out.print("]");
+
+        System.out.print("   До реверса: ");
+        printArray(arr);
+
+        int[] reversedArray = reverseArray(arr);
+
+        System.out.print("После реверса: ");
+        printArray(reversedArray);
+
         System.out.println();
-        return null;
     }
 
-    public static long[] reverseArray(int[] arr) {
-        if (arr == null) {
-            System.out.println("   Array is null");
-            return null;
+    private static int[] reverseArray(int[] arr) {
+        int[] reversedArray = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            reversedArray[i] = arr[arr.length - 1 - i];
         }
-        System.out.print("После реверса: [");
-        Arrays.sort(arr);
+        return reversedArray;
+    }
+
+    private static void printArray(int[] arr) {
+        System.out.print("[");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]);
             if (i < arr.length - 1) {
                 System.out.print(", ");
             }
         }
-        System.out.print("]");
-        System.out.println();
-        return null;
+        System.out.println("]");
     }
 
     public static void main(String[] args) {
-        getArray(new int[0]); // массив нулевой длины
-        reverseArray(new int[0]); // массив нулевой длины
-
-        getArray(null); // null приводит к ошибке
-        reverseArray(null); // null приводит к ошибке
-
-        getArray(new int[]{6, 8, 9, 1});
-        reverseArray(new int[]{6, 8, 9, 1});
-
-        getArray(new int[]{13, 8, 5, 3, 2, 1, 1}); // 13, 8, 5, 3, 2, 1, 1
-        reverseArray(new int[]{13, 8, 5, 3, 2, 1, 1}); // 13, 8, 5, 3, 2, 1, 1
-        System.out.println();
+        reverseAndPrint(new int[0]); // массив нулевой длины
+        reverseAndPrint(null); // null
+        reverseAndPrint(new int[]{6, 8, 9, 1}); // 6, 8, 9, 1
+        reverseAndPrint(new int[]{13, 8, 5, 3, 2, 1, 1}); // 13, 8, 5, 3, 2, 1, 1
     }
 }
