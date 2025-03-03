@@ -3,6 +3,15 @@ package com.startjava.lesson_2_3_4.array;
 import java.util.Random;
 
 public class DeletingElements {
+    public static void main(String[] args) {
+        double[] array = generateRandomArray(15);
+
+        processArray(array, -1); // Некорректный индекс
+        processArray(array, 15); // Некорректный индекс
+        processArray(array, 0);  // Первый элемент
+        processArray(array, 14); // Последний элемент
+    }
+
     private static double[] generateRandomArray(int size) {
         double[] array = new double[size];
         Random random = new Random();
@@ -47,15 +56,6 @@ public class DeletingElements {
                 System.out.println();
             }
         }
-    }
-
-    public static void main(String[] args) {
-        double[] array = generateRandomArray(15);
-
-        processArray(array, -1); // Некорректный индекс
-        processArray(array, 15); // Некорректный индекс
-        processArray(array, 0);  // Первый элемент
-        processArray(array, 14); // Последний элемент
     }
 }
 

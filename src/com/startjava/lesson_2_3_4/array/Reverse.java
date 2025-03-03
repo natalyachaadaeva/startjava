@@ -1,6 +1,13 @@
 package com.startjava.lesson_2_3_4.array;
 
 public class Reverse {
+    public static void main(String[] args) {
+        reverseAndPrint(new int[0]);
+        reverseAndPrint(null);
+        reverseAndPrint(new int[]{6, 8, 9, 1});
+        reverseAndPrint(new int[]{13, 8, 5, 3, 2, 1, 1});
+    }
+
     public static void reverseAndPrint(int[] arr) {
         if (arr == null) {
             System.out.println("   Array is null");
@@ -35,12 +42,5 @@ public class Reverse {
             }
         }
         System.out.println("]");
-    }
-
-    public static void main(String[] args) {
-        reverseAndPrint(new int[0]); // массив нулевой длины
-        reverseAndPrint(null); // null
-        reverseAndPrint(new int[]{6, 8, 9, 1}); // 6, 8, 9, 1
-        reverseAndPrint(new int[]{13, 8, 5, 3, 2, 1, 1}); // 13, 8, 5, 3, 2, 1, 1
     }
 }
