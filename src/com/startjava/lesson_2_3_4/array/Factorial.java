@@ -1,37 +1,43 @@
 package com.startjava.lesson_2_3_4.array;
 
-//
 public class Factorial {
-    public static void getArray(int... args) {
-        for (int i = 0; i < args.length; i++) {
-            System.out.print(args[i]);
-            if (i < args.length - 1) { // Если это не последнее число
-                System.out.print(",");
-            }
-        }
-        System.out.println();
+    public static void main(String[] args) {
+        int[] nums1 = {};
+        printExpression(nums1, calculateFactorials(nums1));
+
+        int[] nums2 = null;
+        printExpression(nums2, calculateFactorials(nums2));
+
+        int[] nums3 = {8, 0, 9};
+        printExpression(nums3, calculateFactorials(nums3));
+
+        int[] nums4 = {-3, 1, 7, 13};
+        printExpression(nums4, calculateFactorials(nums4));
+
+        int[] nums5 = {-22, 0};
+        printExpression(nums5, calculateFactorials(nums5));
     }
 
-    public static void sendFactorial(int... args) {
-        for (int n : args) {
-            if (n < 0) {
-                System.out.println("Ошибка: факториал " + n + "! не определен");
-            } else if (n <= 1) { // Обработка случая для 0!
-                System.out.print(n + "! = ");
-                System.out.print(getFactorialExpression(n));
-                System.out.print("" + factorial(n));
-                System.out.println();
-            } else {
-                System.out.print(n + "! = ");
-                System.out.print(getFactorialExpression(n));
-                System.out.print(" = " + factorial(n));
-                System.out.println();
+    private static long[] calculateFactorials(int[] numbers) {
+        if (numbers == null) {
+            return null;
+        }
+
+        long[] factorials = new long[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            try {
+                factorials[i] = factorial(numbers[i]);
+            } catch (IllegalArgumentException e) {
+                factorials[i] = -1;
             }
         }
+        return factorials;
     }
 
-    // Вычислить факториал
-    public static long factorial(int n) {
+    private static long factorial(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Факториал отрицательного числа не определен: " + n);
+        }
         long result = 1;
         for (int i = 2; i <= n; i++) {
             result *= i;
@@ -39,28 +45,37 @@ public class Factorial {
         return result;
     }
 
-    // получить факториальное выражение в строку
-    public static String getFactorialExpression(int n) {
-        String expression = "";
-        for (int i = 1; i < n; i++) {
-            expression += i;
-            if (i < n) {
-                expression += " * ";
+    private static void printExpression(int[] numbers, long[] factorials) {
+        if (numbers == null || factorials == null) {
+            System.out.println("Массив не может быть null.");
+            return;
+        }
+
+        for (int i = 0; i < numbers.length; i++) {
+            int n = numbers[i];
+            if (factorials[i] == -1) {
+                System.out.println("Ошибка: факториал " + n + "! не определен");
+            } else {
+                System.out.print(n + "! = ");
+                System.out.print(getFactorialExpression(n));
+                System.out.print(" = " + factorials[i]);
+                System.out.println();
             }
         }
-        return expression;
     }
 
-    public static void main(String[] args) {
-        // Вызов метода с различными массивами чисел
-        getArray(); // массив нулевой длины  - вызовут ошибку, поэтому закомментировала
-        // getArray(null); // вызовет ошибку, поэтому закомментировала
-        getArray(8, 0, 9);
-        getArray(-3, 1, 7, 13);
-        getArray(-22, 0);
+    private static String getFactorialExpression(int n) {
+        if (n <= 1) {
+            return "1";
+        }
 
-        sendFactorial(8, 0, 9);
-        sendFactorial(-3, 1, 7, 13);
-        sendFactorial(-22, 0);
+        StringBuilder expression = new StringBuilder();
+        for (int i = 1; i <= n; i++) {
+            expression.append(i);
+            if (i < n) {
+                expression.append(" * ");
+            }
+        }
+        return expression.toString();
     }
 }
