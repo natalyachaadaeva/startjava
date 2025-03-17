@@ -27,8 +27,7 @@ public class Factorial {
         for (int i = 0; i < numbers.length; i++) {
             try {
                 factorials[i] = factorial(numbers[i]);
-            } catch (IllegalArgumentException e) {
-                factorials[i] = -1;
+            } catch (IllegalArgumentException e) { // Убрала проверку, если число отрицательное
             }
         }
         return factorials;
@@ -36,7 +35,10 @@ public class Factorial {
 
     private static long factorial(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("Факториал отрицательного числа не определен: " + n);
+            throw new IllegalArgumentException();
+        }
+        if (n <= 1) {
+            return 1;
         }
         long result = 1;
         for (int i = 2; i <= n; i++) {
@@ -53,8 +55,10 @@ public class Factorial {
 
         for (int i = 0; i < numbers.length; i++) {
             int n = numbers[i];
-            if (factorials[i] == -1) {
+            if (factorials[i] == 0 && n < 0) {
                 System.out.println("Ошибка: факториал " + n + "! не определен");
+            } else if (n <= 1) {
+                System.out.println(n + "! = " + factorials[i]);
             } else {
                 System.out.print(n + "! = ");
                 System.out.print(getFactorialExpression(n));
