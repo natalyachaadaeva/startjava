@@ -3,39 +3,36 @@ package com.startjava.lesson_2_3_4.array;
 public class Factorial {
     public static void main(String[] args) {
         int[] nums1 = {};
-        printExpression(nums1, calculateFactorials(nums1));
+        printExpression(nums1, calcFactorials(nums1));
 
         int[] nums2 = null;
-        printExpression(nums2, calculateFactorials(nums2));
+        printExpression(nums2, calcFactorials(nums2));
 
         int[] nums3 = {8, 0, 9};
-        printExpression(nums3, calculateFactorials(nums3));
+        printExpression(nums3, calcFactorials(nums3));
 
         int[] nums4 = {-3, 1, 7, 13};
-        printExpression(nums4, calculateFactorials(nums4));
+        printExpression(nums4, calcFactorials(nums4));
 
         int[] nums5 = {-22, 0};
-        printExpression(nums5, calculateFactorials(nums5));
+        printExpression(nums5, calcFactorials(nums5));
     }
 
-    private static long[] calculateFactorials(int[] numbers) {
-        if (numbers == null) {
+    private static long[] calcFactorials(int[] nums) {
+        if (nums == null) {
             return null;
         }
 
-        long[] factorials = new long[numbers.length];
-        for (int i = 0; i < numbers.length; i++) {
-            try {
-                factorials[i] = factorial(numbers[i]);
-            } catch (IllegalArgumentException e) { // Убрала проверку, если число отрицательное
-            }
+        long[] factorials = new long[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            factorials[i] = factorial(nums[i]);
         }
         return factorials;
     }
 
     private static long factorial(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException();
+            return 0;
         }
         if (n <= 1) {
             return 1;
@@ -47,39 +44,38 @@ public class Factorial {
         return result;
     }
 
-    private static void printExpression(int[] numbers, long[] factorials) {
-        if (numbers == null || factorials == null) {
+    private static void printExpression(int[] nums, long[] factorials) {
+        if (nums == null || factorials == null) {
             System.out.println("Массив не может быть null.");
             return;
         }
 
-        for (int i = 0; i < numbers.length; i++) {
-            int n = numbers[i];
+        for (int i = 0; i < nums.length; i++) {
+            int n = nums[i];
             if (factorials[i] == 0 && n < 0) {
                 System.out.println("Ошибка: факториал " + n + "! не определен");
-            } else if (n <= 1) {
-                System.out.println(n + "! = " + factorials[i]);
             } else {
-                System.out.print(n + "! = ");
-                System.out.print(getFactorialExpression(n));
-                System.out.print(" = " + factorials[i]);
-                System.out.println();
+                System.out.println(formFactorialExpression(n, factorials[i]));
             }
         }
     }
 
-    private static String getFactorialExpression(int n) {
+    private static String formFactorialExpression(int n, long factorial) {
+        if (n < 0) {
+            return "Ошибка: факториал " + n + "! не определен";
+        }
         if (n <= 1) {
-            return "1";
+            return n + "! = " + factorial;
         }
 
-        StringBuilder expression = new StringBuilder();
+        StringBuilder expression = new StringBuilder(n + "! = ");
         for (int i = 1; i <= n; i++) {
             expression.append(i);
             if (i < n) {
                 expression.append(" * ");
             }
         }
+        expression.append(" = ").append(factorial);
         return expression.toString();
     }
 }
