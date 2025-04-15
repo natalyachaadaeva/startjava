@@ -52,7 +52,7 @@ public class Factorial {
 
         for (int i = 0; i < nums.length; i++) {
             int n = nums[i];
-            if (factorials[i] == 0 && n < 0) {
+            if (factorials[i] == 0) {
                 System.out.println("Ошибка: факториал " + n + "! не определен");
             } else {
                 System.out.println(formFactorialExpression(n, factorials[i]));
@@ -61,9 +61,6 @@ public class Factorial {
     }
 
     private static String formFactorialExpression(int n, long factorial) {
-        if (n < 0) {
-            return "Ошибка: факториал " + n + "! не определен";
-        }
         if (n <= 1) {
             return n + "! = " + factorial;
         }

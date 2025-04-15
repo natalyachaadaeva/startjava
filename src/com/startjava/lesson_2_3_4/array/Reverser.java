@@ -21,15 +21,16 @@ public class Reverser {
         printResult(numbers4, reversed);
     }
 
-    private static int[] reverse(int[] arr) {
-        if (arr == null) {
+    private static int[] reverse(int[] array) {
+        if (array == null) {
             return null;
         }
 
-        int[] reversedArray = new int[arr.length];
-        int i = arr.length - 1;
+        int[] reversedArray = new int[array.length];
+        int i = array.length - 1;
+
         // цикл for-each для перебора элементов массива вместо for
-        for (int numbers : arr) {
+        for (int numbers : array) {
             reversedArray[i--] = numbers;
         }
         return reversedArray;
