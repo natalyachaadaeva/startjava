@@ -13,24 +13,23 @@ public class BuildTriangle {
             return;
         }
 
-        int length = Math.abs(end - start) + 1;
+        String triangle = buildTriangle(start, end, ascending);
+        System.out.println(triangle);
+    }
+
+    private static String buildTriangle(char start, char end, boolean ascending) {
+        int length = end - start + 1;
         StringBuilder triangle = new StringBuilder();
 
-        if (ascending) {
-            for (int i = 0; i < length; i++) {
-                char currentChar = (char) (start + i);
-                String spaces = " ".repeat(length - i - 1);
-                String chars = String.valueOf(currentChar).repeat(2 * i + 1);
-                triangle.append(spaces).append(chars).append("\n");
-            }
-        } else {
-            for (int i = 0; i < length; i++) {
-                char currentChar = (char) (end - i);
-                String spaces = " ".repeat(i);
-                String chars = String.valueOf(currentChar).repeat(2 * (length - i) - 1);
-                triangle.append(spaces).append(chars).append("\n");
-            }
+        for (int i = 0; i < length; i++) {
+            char currentChar = ascending ? (char) (start + i) : (char) (end - i);
+            int spacesCount = length - i - 1;
+            int charsCount = 2 * i + 1;
+
+            triangle.append(" ".repeat(spacesCount))
+                    .append(String.valueOf(currentChar).repeat(charsCount))
+                    .append("\n");
         }
-        System.out.println(triangle);
+        return triangle.toString();
     }
 }

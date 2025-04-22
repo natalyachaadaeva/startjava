@@ -47,7 +47,7 @@ public class DeletingElements {
         printArray(originalArray, 8);
 
         System.out.println("Измененный массив:");
-        printArray(modifiedArray, 7);
+        printArray(modifiedArray, 8);
 
         float threshold = originalArray[index];
         int zeroedCount = countZeroedElements(originalArray, modifiedArray);
