@@ -2,22 +2,20 @@ package com.startjava.lesson_2_3_4.array;
 
 public class BuildTriangle {
     public static void main(String[] args) {
-        printBuildTriangle('0', '9', true);
-        printBuildTriangle('/', '!', false);
-        printBuildTriangle('A', 'J', false);
+        String triangle1 = buildTriangle('0', '9', true);
+        printTriangle(triangle1);
+
+        String triangle2 = buildTriangle('/', '!', false);
+        printTriangle(triangle2);
+
+        String triangle3 = buildTriangle('A', 'J', false);
+        printTriangle(triangle3);
     }
 
-    public static void printBuildTriangle(char start, char end, boolean ascending) {
+    public static String buildTriangle(char start, char end, boolean ascending) {
         if (start > end) {
-            System.out.printf("Ошибка: левая граница (%d) > правой (%d)%n%n", (int) start, (int) end);
-            return;
+            return String.format("Ошибка: левая граница (%d) > правой (%d)%n%n", (int) start, (int) end);
         }
-
-        String triangle = buildTriangle(start, end, ascending);
-        System.out.println(triangle);
-    }
-
-    private static String buildTriangle(char start, char end, boolean ascending) {
         int length = end - start + 1;
         StringBuilder triangle = new StringBuilder();
 
@@ -31,5 +29,9 @@ public class BuildTriangle {
                     .append("\n");
         }
         return triangle.toString();
+    }
+
+    private static void printTriangle(String triangle) {
+        System.out.println(triangle);
     }
 }
