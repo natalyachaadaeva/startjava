@@ -2,7 +2,8 @@ package com.startjava.lesson_2_3_4.array;
 
 public class TypeWriterEffect {
     public static void main(String[] args) throws InterruptedException {
-        String text1 = "Java - это C++, из которого убрали все пистолеты, ножи и дубинки.\n- James Gosling";
+        String text1 = "Java - это C++, из которого убрали все пистолеты, ножи и дубинки." +
+                "\n- James Gosling";
         String formattedText1 = processText(text1);
         type(formattedText1);
         String text2 = "Чтобы написать чистый код, мы сначала пишем грязный код, затем рефакторим его." +
