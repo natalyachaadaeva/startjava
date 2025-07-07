@@ -4,24 +4,24 @@ public class TypeWriterEffect {
     public static void main(String[] args) throws InterruptedException {
         String text1 = "Java - это C++, из которого убрали все пистолеты, ножи и дубинки." +
                 "\n- James Gosling";
-        String formattedText1 = formatTextWithHighlightedExtremes(text1);
-        printWithTypewriterEffect(formattedText1);
+        String formattedText1 = toUpperCaseRange(text1);
+        type(formattedText1);
 
         String text2 = "Чтобы написать чистый код, мы сначала пишем грязный код, затем рефакторим его." +
                 "\n- Robert Martin";
-        String formattedText2 = formatTextWithHighlightedExtremes(text2);
-        printWithTypewriterEffect(formattedText2);
+        String formattedText2 = toUpperCaseRange(text2);
+        type(formattedText2);
 
         String text3 = "null";
-        String formattedText3 = formatTextWithHighlightedExtremes(text3);
-        printWithTypewriterEffect(formattedText3);
+        String formattedText3 = toUpperCaseRange(text3);
+        type(formattedText3);
 
         String text4 = "";
-        String formattedText4 = formatTextWithHighlightedExtremes(text4);
-        printWithTypewriterEffect(formattedText4);
+        String formattedText4 = toUpperCaseRange(text4);
+        type(formattedText4);
     }
 
-    private static String formatTextWithHighlightedExtremes(String text) {
+    private static String toUpperCaseRange(String text) {
         if (text == null || text.isEmpty()) {
             return text;
         }
@@ -32,29 +32,18 @@ public class TypeWriterEffect {
         int firstShortestIndex = -1;
         int firstLongestIndex = -1;
 
-        for (String word : words) {
-            String cleanedWord = removePunctuation(word);
-            if (!cleanedWord.isEmpty()) {
-                int length = cleanedWord.length();
-                if (length < shortestLength) {
-                    shortestLength = length;
-                }
-                if (length > longestLength) {
-                    longestLength = length;
-                }
-            }
-        }
-
         for (int i = 0; i < words.length; i++) {
             String cleanedWord = removePunctuation(words[i]);
-            if (!cleanedWord.isEmpty()) {
-                int length = cleanedWord.length();
-                if (length == shortestLength && firstShortestIndex == -1) {
-                    firstShortestIndex = i;
-                }
-                if (length == longestLength && firstLongestIndex == -1) {
-                    firstLongestIndex = i;
-                }
+            if (cleanedWord.isEmpty()) continue;
+
+            int length = cleanedWord.length();
+            if (length < shortestLength) {
+                shortestLength = length;
+                firstShortestIndex = i;
+            }
+            if (length > longestLength) {
+                longestLength = length;
+                firstLongestIndex = i;
             }
         }
 
@@ -87,7 +76,7 @@ public class TypeWriterEffect {
         return word.replaceAll("[\\p{P}\\s]+", "");
     }
 
-    private static void printWithTypewriterEffect(String textToPrint) throws InterruptedException {
+    private static void type(String textToPrint) throws InterruptedException {
         for (char character : textToPrint.toCharArray()) {
             System.out.print(character);
             Thread.sleep(25);
