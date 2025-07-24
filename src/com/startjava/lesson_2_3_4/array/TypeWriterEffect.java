@@ -51,17 +51,19 @@ public class TypeWriterEffect {
             return text;
         }
 
-        int startHighlight = Math.min(firstShortestIndex, firstLongestIndex);
-        int endHighlight = Math.max(firstShortestIndex, firstLongestIndex);
+        int startHighlight = firstShortestIndex;
+        int endHighlight = firstLongestIndex;
+        if (startHighlight > endHighlight) {
+            int temp = startHighlight;
+            startHighlight = endHighlight;
+            endHighlight = temp;
+        }
 
         StringBuilder formattedText = new StringBuilder();
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
             if (i >= startHighlight && i <= endHighlight) {
-                String cleanedWord = removePunctuation(word);
-                if (!cleanedWord.isEmpty()) {
-                    word = word.replace(cleanedWord, cleanedWord.toUpperCase());
-                }
+                word = word.toUpperCase();
             }
             formattedText.append(word);
             if (i < words.length - 1) {
